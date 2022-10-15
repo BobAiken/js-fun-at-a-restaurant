@@ -10,17 +10,11 @@ class Chef {
     return `Hello, ${customerName}!`
   }
   checkForFood(foodItem){
-    var lookUpKey = 'name'
-    if(this.restaurant.menus.breakfast.includes(foodItem)){
-      return `Yes, we're serving ${foodItem[lookUpKey]} today!`
+    var foodItemType = foodItem.type
+    if(this.restaurant.menus[foodItemType].includes(foodItem)){
+      return `Yes, we're serving ${foodItem.name} today!`
     }
-    if(this.restaurant.menus.lunch.includes(foodItem)){
-      return `Yes, we're serving ${foodItem[lookUpKey]} today!`
-    }
-    if(this.restaurant.menus.dinner.includes(foodItem)){
-      return `Yes, we're serving ${foodItem[lookUpKey]} today!`
-    }
-    return `Sorry, we aren't serving ${foodItem[lookUpKey]} today.`
+    return `Sorry, we aren't serving ${foodItem.name} today.`
   }
 }
 
