@@ -43,9 +43,7 @@ addMenuItem(pizzaRestaurant, baconEggsPizza);
 //removeMenuItem
 
 function removeMenuItem(restaurant, menuItem, itemType){
-  if (restaurant.menus[itemType] === undefined){
-     return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`
-  }
+  
   for ( i = 0; i<restaurant.menus[itemType].length; i++ ){
     if (menuItem === restaurant.menus[itemType][i]["name"]){
       restaurant.menus[itemType].splice(i,1)
